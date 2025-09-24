@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 
 <head>
     <meta charset="utf-8" />
@@ -64,7 +64,34 @@
 </head>
 
 <body
-    class="bg-background-light dark:bg-background-dark font-body text-content-light dark:text-content-dark tracking-wide">
+    class="bg-background-light dark:bg-background-dark font-body text-content-light dark:text-content-dark tracking-wide pb-20 sm:pb-0">
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="fixed inset-0 bg-background-dark/95 backdrop-blur-sm z-[99] hidden md:hidden">
+        <div class="flex justify-end p-4">
+            <button id="close-menu-button" class="text-white p-2">
+                <svg class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+            </button>
+        </div>
+        <nav class="flex flex-col items-center justify-center h-full -mt-20 text-center">
+            <a href="#amenities"
+                class="mobile-menu-link text-white text-3xl font-display py-4 transition-colors hover:text-primary">Amenities</a>
+            <a href="#rooms"
+                class="mobile-menu-link text-white text-3xl font-display py-4 transition-colors hover:text-primary">Rooms</a>
+            <a href="#reviews"
+                class="mobile-menu-link text-white text-3xl font-display py-4 transition-colors hover:text-primary">Reviews</a>
+            <a href="#contact"
+                class="mobile-menu-link text-white text-3xl font-display py-4 transition-colors hover:text-primary">Contact</a>
+            <button
+                class="mt-8 flex items-center justify-center rounded-full h-12 px-8 text-base font-semibold bg-primary text-white hover:bg-opacity-90 transition-all duration-300 transform hover:scale-105">
+                <span class="material-symbols-outlined mr-2">call</span>
+                <span>Call Now</span>
+            </button>
+        </nav>
+    </div>
+
     <div class="relative min-h-screen w-full">
         <div class="flex h-full grow flex-col">
             <header
@@ -91,7 +118,8 @@
                         <span>Call Now</span>
                     </button>
                 </div>
-                <button class="md:hidden p-2 rounded-lg text-white">
+                <!-- Hamburger Button -->
+                <button id="hamburger-button" class="md:hidden p-2 rounded-lg text-white">
                     <svg class="h-6 w-6" fill="none" height="24" stroke="currentColor" stroke-linecap="round"
                         stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24"
                         xmlns="http://www.w3.org/2000/svg">
@@ -121,9 +149,9 @@
                                 class="flex items-center justify-center rounded-full h-14 px-8 text-base font-semibold bg-green-600 text-white hover:bg-green-700 transition-colors duration-300 transform hover:scale-105 shadow-lg">
                                 <svg class="w-6 h-6 mr-3" fill="currentColor" viewBox="0 0 24 24"
                                     xmlns="http://www.w3.org/2000/svg">
-                                    <path
-                                        d="M12.04 2C6.58 2 2.13 6.45 2.13 12c0 1.8.49 3.47 1.32 4.91L2.06 22l5.23-1.39c1.39.77 2.96 1.23 4.62 1.23h.12c5.46 0 9.91-4.45 9.91-9.91C22.08 6.45 17.62 2 12.04 2zM9.99 16.13l-2.8-2.8 1.06-1.06 1.74 1.74 3.96-3.96 1.06 1.06-5.02 5.02z">
-                                    </path>
+                                    <path fill-rule="evenodd"
+                                        d="M18.425 5.575a1.002 1.002 0 0 1 1.414 0l.002.002a1 1 0 0 1 0 1.414l-1.06 1.06a.5.5 0 0 0 0 .707l1.06 1.06a1 1 0 0 1 0 1.414l-.002.002a1 1 0 0 1-1.414 0l-1.06-1.06a.5.5 0 0 0-.707 0l-1.06 1.06a1 1 0 0 1-1.414 0l-.002-.002a1 1 0 0 1 0-1.414l1.06-1.06a.5.5 0 0 0 0-.707l-1.06-1.06a1 1 0 0 1 0-1.414l.002-.002a1 1 0 0 1 1.414 0l1.06 1.06a.5.5 0 0 0 .707 0l1.06-1.06zM12 2C6.477 2 2 6.477 2 12c0 1.758.45 3.423 1.258 4.899L2.05 22l5.05-1.208C8.52 21.55 10.185 22 12 22c5.523 0 10-4.477 10-10S17.523 2 12 2zm-1.218 13.91c-.244.123-.51.196-.78.196c-.314 0-.616-.09-.884-.265l-2.09-1.385a1.2 1.2 0 0 1-.58-1.008v-3.494a1.2 1.2 0 0 1 .575-1.006l2.09-1.39a1.92 1.92 0 0 1 1.77 0l2.09 1.39a1.2 1.2 0 0 1 .576 1.007v3.493a1.2 1.2 0 0 1-.58 1.008l-2.09 1.385z"
+                                        clip-rule="evenodd" />
                                 </svg>
                                 <span>Message on WhatsApp</span>
                             </button>
@@ -142,7 +170,7 @@
                                     Our commitment to excellence shines through in the words of our visitors. Discover
                                     why so many choose us for their unforgettable escape.</p>
                             </div>
-                            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 text-center mb-12">
+                            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center mb-12">
                                 <div class="bg-primary/10 dark:bg-primary/20 p-8 rounded-xl">
                                     <p class="text-5xl font-display font-bold text-primary">5,000+</p>
                                     <p class="mt-2 font-semibold text-content-light dark:text-content-dark">Happy
@@ -159,66 +187,100 @@
                                         to Friends</p>
                                 </div>
                             </div>
-                            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                                <div
-                                    class="bg-surface-light dark:bg-surface-dark p-6 rounded-xl shadow-lg flex flex-col">
-                                    <div class="flex items-center mb-4">
-                                        <img alt="Guest photo" class="w-12 h-12 rounded-full object-cover mr-4"
-                                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuBIwuQ6rHojA0FC5rJuO0YhYI_Ewq8CTQJVcboWh60D7eI_aFmmcbqeK1iVkqFUsnqPfvvojxEdRQoYhBH_cwMd9PS_Y1Jzo1e64s_QEeSUPkNchU_MuP4PXTkjP1MYxn836ymDfnenX3VeaMn3197WKT--ON4gdEvjiy3cTxki0Q87tojNSFAY-n9uR_kJAn3rOZimoGTZ-LDooBxLktDowK6q45j_JQ42JAV27KzNXDpWuax3RarfXTjW1ngl-lPGwGNL5rZKVtw" />
-                                        <div>
-                                            <h4 class="font-semibold">Emily R.</h4>
-                                            <div class="flex text-primary text-sm">
-                                                <span class="material-symbols-outlined !text-base">star</span><span
-                                                    class="material-symbols-outlined !text-base">star</span><span
-                                                    class="material-symbols-outlined !text-base">star</span><span
-                                                    class="material-symbols-outlined !text-base">star</span><span
-                                                    class="material-symbols-outlined !text-base">star</span>
+
+                            <!-- Reviews Carousel -->
+                            <div id="reviews-carousel" class="relative">
+                                <div class="overflow-hidden">
+                                    <div id="reviews-track" data-carousel-track
+                                        class="flex md:grid md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8">
+                                        <!-- Review Card 1 -->
+                                        <div class="w-[85%] md:w-full flex-shrink-0">
+                                            <div
+                                                class="bg-surface-light dark:bg-surface-dark p-6 rounded-xl shadow-lg flex flex-col h-full min-h-[240px]">
+                                                <div class="flex items-center mb-4">
+                                                    <img alt="Guest photo"
+                                                        class="w-12 h-12 rounded-full object-cover mr-4"
+                                                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuBIwuQ6rHojA0FC5rJuO0YhYI_Ewq8CTQJVcboWh60D7eI_aFmmcbqeK1iVkqFUsnqPfvvojxEdRQoYhBH_cwMd9PS_Y1Jzo1e64s_QEeSUPkNchU_MuP4PXTkjP1MYxn836ymDfnenX3VeaMn3197WKT--ON4gdEvjiy3cTxki0Q87tojNSFAY-n9uR_kJAn3rOZimoGTZ-LDooBxLktDowK6q45j_JQ42JAV27KzNXDpWuax3RarfXTjW1ngl-lPGwGNL5rZKVtw" />
+                                                    <div>
+                                                        <h4 class="font-semibold">Emily R.</h4>
+                                                        <div class="flex text-primary text-sm">
+                                                            <span
+                                                                class="material-symbols-outlined !text-base">star</span><span
+                                                                class="material-symbols-outlined !text-base">star</span><span
+                                                                class="material-symbols-outlined !text-base">star</span><span
+                                                                class="material-symbols-outlined !text-base">star</span><span
+                                                                class="material-symbols-outlined !text-base">star</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <p class="text-subtle-light dark:text-subtle-dark text-sm flex-grow">"An
+                                                    absolute
+                                                    paradise! The service was impeccable and the views were
+                                                    breathtaking. We can't
+                                                    wait to come back."</p>
+                                            </div>
+                                        </div>
+                                        <!-- Review Card 2 -->
+                                        <div class="w-[85%] md:w-full flex-shrink-0">
+                                            <div
+                                                class="bg-surface-light dark:bg-surface-dark p-6 rounded-xl shadow-lg flex flex-col h-full min-h-[240px]">
+                                                <div class="flex items-center mb-4">
+                                                    <img alt="Guest photo"
+                                                        class="w-12 h-12 rounded-full object-cover mr-4"
+                                                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuAY0KPICJtl7WVod0Z4c2shs4LuPB3B6wmM09hW8Rv1i590cVX2EjPK_1n6WmrQUnKly3VFFUBl2bITNzzpPyIWJRjS2MFXGvvVzScKxLagomokmIZY6tMBKQOGVBQp-NsCyK51txaekCdp5Ca-5vyFLvbaxOg02zbdzwzcgs24PXtHgqLFKEEgFFouWirEag8DUlmuKlaPSyfkxErIPyTefvhyJRYImYMd4E_lYbcFCUnIv-zW0dySnvEUoDOyVtA_w0xnB2r2408" />
+                                                    <div>
+                                                        <h4 class="font-semibold">Michael B.</h4>
+                                                        <div class="flex text-primary text-sm">
+                                                            <span
+                                                                class="material-symbols-outlined !text-base">star</span><span
+                                                                class="material-symbols-outlined !text-base">star</span><span
+                                                                class="material-symbols-outlined !text-base">star</span><span
+                                                                class="material-symbols-outlined !text-base">star</span><span
+                                                                class="material-symbols-outlined !text-base">star_half</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <p class="text-subtle-light dark:text-subtle-dark text-sm flex-grow">
+                                                    "The perfect
+                                                    blend of luxury and nature. The resort staff went above and beyond
+                                                    to make our
+                                                    anniversary special."</p>
+                                            </div>
+                                        </div>
+                                        <!-- Review Card 3 -->
+                                        <div class="w-[85%] md:w-full flex-shrink-0">
+                                            <div
+                                                class="bg-surface-light dark:bg-surface-dark p-6 rounded-xl shadow-lg flex flex-col h-full min-h-[240px]">
+                                                <div class="flex items-center mb-4">
+                                                    <img alt="Guest photo"
+                                                        class="w-12 h-12 rounded-full object-cover mr-4"
+                                                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuASwKRFUfgDvt0sWUu24MK6_NoU9e9tdQi23vEEEthK8Yv6bIRD34xjXwJe208cC7SIBjrYBig35O4oPr8nSNFAaC0wIixQ6AbVQMC00XoFsoSB4w4PHBZd2qFceeI-BcLdXFSD8hm97UipXgxdGLY3jOiHmyzxImtt9arkSw5Z8rOmjT-sv1wkKl1S9YXbWULUKgHfrQbDDABse9EkNMgRyuHT3h-M8BYAyoeP6HAAn9_wI_zZFEEhWm49Vz4qr1zJuM2RhsYpozs" />
+                                                    <div>
+                                                        <h4 class="font-semibold">Sarah L.</h4>
+                                                        <div class="flex text-primary text-sm">
+                                                            <span
+                                                                class="material-symbols-outlined !text-base">star</span><span
+                                                                class="material-symbols-outlined !text-base">star</span><span
+                                                                class="material-symbols-outlined !text-base">star</span><span
+                                                                class="material-symbols-outlined !text-base">star</span><span
+                                                                class="material-symbols-outlined !text-base">star</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <p class="text-subtle-light dark:text-subtle-dark text-sm flex-grow">
+                                                    "From the
+                                                    stunning rooms to the delicious food, every aspect of our stay was
+                                                    flawless.
+                                                    Highly recommended!"</p>
                                             </div>
                                         </div>
                                     </div>
-                                    <p class="text-subtle-light dark:text-subtle-dark text-sm flex-grow">"An absolute
-                                        paradise! The service was impeccable and the views were breathtaking. We can't
-                                        wait to come back."</p>
                                 </div>
-                                <div
-                                    class="bg-surface-light dark:bg-surface-dark p-6 rounded-xl shadow-lg flex flex-col">
-                                    <div class="flex items-center mb-4">
-                                        <img alt="Guest photo" class="w-12 h-12 rounded-full object-cover mr-4"
-                                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuAY0KPICJtl7WVod0Z4c2shs4LuPB3B6wmM09hW8Rv1i590cVX2EjPK_1n6WmrQUnKly3VFFUBl2bITNzzpPyIWJRjS2MFXGvvVzScKxLagomokmIZY6tMBKQOGVBQp-NsCyK51txaekCdp5Ca-5vyFLvbaxOg02zbdzwzcgs24PXtHgqLFKEEgFFouWirEag8DUlmuKlaPSyfkxErIPyTefvhyJRYImYMd4E_lYbcFCUnIv-zW0dySnvEUoDOyVtA_w0xnB2r2408" />
-                                        <div>
-                                            <h4 class="font-semibold">Michael B.</h4>
-                                            <div class="flex text-primary text-sm">
-                                                <span class="material-symbols-outlined !text-base">star</span><span
-                                                    class="material-symbols-outlined !text-base">star</span><span
-                                                    class="material-symbols-outlined !text-base">star</span><span
-                                                    class="material-symbols-outlined !text-base">star</span><span
-                                                    class="material-symbols-outlined !text-base">star_half</span>
-                                            </div>
-                                        </div>
+                                <!-- Carousel Controls for mobile -->
+                                <div class="md:hidden flex justify-center items-center mt-8">
+                                    <div id="review-dots" data-carousel-dots class="flex gap-2 items-center">
+                                        <!-- Dots will be generated by JS -->
                                     </div>
-                                    <p class="text-subtle-light dark:text-subtle-dark text-sm flex-grow">"The perfect
-                                        blend of luxury and nature. The resort staff went above and beyond to make our
-                                        anniversary special."</p>
-                                </div>
-                                <div
-                                    class="bg-surface-light dark:bg-surface-dark p-6 rounded-xl shadow-lg flex flex-col">
-                                    <div class="flex items-center mb-4">
-                                        <img alt="Guest photo" class="w-12 h-12 rounded-full object-cover mr-4"
-                                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuASwKRFUfgDvt0sWUu24MK6_NoU9e9tdQi23vEEEthK8Yv6bIRD34xjXwJe208cC7SIBjrYBig35O4oPr8nSNFAaC0wIixQ6AbVQMC00XoFsoSB4w4PHBZd2qFceeI-BcLdXFSD8hm97UipXgxdGLY3jOiHmyzxImtt9arkSw5Z8rOmjT-sv1wkKl1S9YXbWULUKgHfrQbDDABse9EkNMgRyuHT3h-M8BYAyoeP6HAAn9_wI_zZFEEhWm49Vz4qr1zJuM2RhsYpozs" />
-                                        <div>
-                                            <h4 class="font-semibold">Sarah L.</h4>
-                                            <div class="flex text-primary text-sm">
-                                                <span class="material-symbols-outlined !text-base">star</span><span
-                                                    class="material-symbols-outlined !text-base">star</span><span
-                                                    class="material-symbols-outlined !text-base">star</span><span
-                                                    class="material-symbols-outlined !text-base">star</span><span
-                                                    class="material-symbols-outlined !text-base">star</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <p class="text-subtle-light dark:text-subtle-dark text-sm flex-grow">"From the
-                                        stunning rooms to the delicious food, every aspect of our stay was flawless.
-                                        Highly recommended!"</p>
                                 </div>
                             </div>
                         </section>
@@ -233,7 +295,7 @@
                                 <div
                                     class="flex flex-col items-center gap-4 bg-surface-light dark:bg-surface-dark p-8 rounded-xl shadow-lg">
                                     <div class="text-primary text-5xl"><span
-                                            class="material-symbols-outlined">landscape</span></div>
+                                            class="material-symbols-outlined !text-5xl">landscape</span></div>
                                     <h3 class="font-display text-2xl font-semibold">Breathtaking Scenery</h3>
                                     <p class="text-sm text-subtle-light dark:text-subtle-dark text-center">Tucked away
                                         in a pristine, secluded paradise, offering unparalleled peace and stunning
@@ -242,7 +304,7 @@
                                 <div
                                     class="flex flex-col items-center gap-4 bg-surface-light dark:bg-surface-dark p-8 rounded-xl shadow-lg">
                                     <div class="text-primary text-5xl"><span
-                                            class="material-symbols-outlined">concierge</span></div>
+                                            class="material-symbols-outlined !text-5xl">concierge</span></div>
                                     <h3 class="font-display text-2xl font-semibold">Personalized Service</h3>
                                     <p class="text-sm text-subtle-light dark:text-subtle-dark text-center">Our dedicated
                                         24/7 concierge team ensures your every need is met, creating a truly bespoke
@@ -251,7 +313,7 @@
                                 <div
                                     class="flex flex-col items-center gap-4 bg-surface-light dark:bg-surface-dark p-8 rounded-xl shadow-lg">
                                     <div class="text-primary text-5xl"><span
-                                            class="material-symbols-outlined">celebration</span></div>
+                                            class="material-symbols-outlined !text-5xl">celebration</span></div>
                                     <h3 class="font-display text-2xl font-semibold">Exclusive Direct Offers</h3>
                                     <p class="text-sm text-subtle-light dark:text-subtle-dark text-center">Call us
                                         directly to access special packages and the best possible rates, guaranteed.</p>
@@ -264,7 +326,7 @@
                                     <img alt="Spa at the resort"
                                         class="w-full h-[500px] object-cover rounded-xl shadow-lg"
                                         src="https://lh3.googleusercontent.com/aida-public/AB6AXuAluEFB7mTxWrLYXVgd-M-AEYdJkGs6qZTMNDUlaheZc_ZD5mkSmQW4Zjh5NHF7J02VG_Vve_HZeTEFF3oaIZPrwPUEao108zhThbXuPUViUxsKMLPSjKzJ1EPJ1AJ4pH1IBdJJicy31VypjsXUNwowgwWwlRyVkUpZRnp5Mt_IJjVaVIQJn9tlmQh5D3_OpZ838l0SUgfW14l_GzA-8O593LvHzuyq_rM5klmhRKy-5OeTYsCsTA69QXq6vRCe48RBbOdTc6Kegd4" />
-                                    <div class="absolute -bottom-8 -right-8 w-48 h-48 bg-cover bg-center rounded-full border-8 border-background-light dark:border-background-dark shadow-2xl"
+                                    <div class="absolute -bottom-8 -right-8 w-48 h-48 bg-cover bg-center rounded-full border-8 border-background-light dark:border-background-dark shadow-2xl hidden sm:block"
                                         style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCX_BsAXvXd6rnVdiz0Q_RTIS186dt5NpR7SYt840PT_K6bMnQVCr1QRe142n4meZq_Fyfy_0Wi7a7WPu3RLu8Dc1PCub3Bo80vUeelsIcZxYN7MIWSNhXSYXdkTuS2eDozpapIgWgj-oHR-S_q_sdHCgmj9XlRpvUZZwMmp-no_A0IIT0rpw3a3cTCg8iaSUGPL1h6MWzO5gmtiI_p6K_YQaReCa6weMFcYb0u5cPHlLugh8ltZK68bfH3fAP6NEwSEXxw3F2TtSk');">
                                     </div>
                                 </div>
@@ -279,42 +341,42 @@
                                         <div class="flex flex-col items-center gap-4 group">
                                             <div
                                                 class="text-primary text-4xl bg-primary/10 p-5 rounded-full group-hover:bg-primary group-hover:text-white transition-all duration-300">
-                                                <span class="material-symbols-outlined">pool</span>
+                                                <span class="material-symbols-outlined !text-4xl">pool</span>
                                             </div>
                                             <span class="font-semibold text-lg">Infinity Pool</span>
                                         </div>
                                         <div class="flex flex-col items-center gap-4 group">
                                             <div
                                                 class="text-primary text-4xl bg-primary/10 p-5 rounded-full group-hover:bg-primary group-hover:text-white transition-all duration-300">
-                                                <span class="material-symbols-outlined">wifi</span>
+                                                <span class="material-symbols-outlined !text-4xl">wifi</span>
                                             </div>
                                             <span class="font-semibold text-lg">High-Speed Wi-Fi</span>
                                         </div>
                                         <div class="flex flex-col items-center gap-4 group">
                                             <div
                                                 class="text-primary text-4xl bg-primary/10 p-5 rounded-full group-hover:bg-primary group-hover:text-white transition-all duration-300">
-                                                <span class="material-symbols-outlined">spa</span>
+                                                <span class="material-symbols-outlined !text-4xl">spa</span>
                                             </div>
                                             <span class="font-semibold text-lg">Wellness Spa</span>
                                         </div>
                                         <div class="flex flex-col items-center gap-4 group">
                                             <div
                                                 class="text-primary text-4xl bg-primary/10 p-5 rounded-full group-hover:bg-primary group-hover:text-white transition-all duration-300">
-                                                <span class="material-symbols-outlined">restaurant</span>
+                                                <span class="material-symbols-outlined !text-4xl">restaurant</span>
                                             </div>
                                             <span class="font-semibold text-lg">Fine Dining</span>
                                         </div>
                                         <div class="flex flex-col items-center gap-4 group">
                                             <div
                                                 class="text-primary text-4xl bg-primary/10 p-5 rounded-full group-hover:bg-primary group-hover:text-white transition-all duration-300">
-                                                <span class="material-symbols-outlined">fitness_center</span>
+                                                <span class="material-symbols-outlined !text-4xl">fitness_center</span>
                                             </div>
                                             <span class="font-semibold text-lg">Fitness Center</span>
                                         </div>
                                         <div class="flex flex-col items-center gap-4 group">
                                             <div
                                                 class="text-primary text-4xl bg-primary/10 p-5 rounded-full group-hover:bg-primary group-hover:text-white transition-all duration-300">
-                                                <span class="material-symbols-outlined">local_bar</span>
+                                                <span class="material-symbols-outlined !text-4xl">local_bar</span>
                                             </div>
                                             <span class="font-semibold text-lg">Cocktail Bar</span>
                                         </div>
@@ -323,7 +385,6 @@
                             </div>
                         </section>
 
-                        </section>
                         <section class="py-16" id="activities">
                             <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
                                 <div class="order-2 lg:order-1">
@@ -356,7 +417,8 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="relative order-1 lg:order-2 h-[600px] w-full lg:w-auto">
+                                <div
+                                    class="relative order-1 lg:order-2 h-[450px] sm:h-[550px] lg:h-[600px] w-full lg:w-auto">
                                     <img alt="Activity collage"
                                         class="absolute top-0 right-0 w-3/4 h-3/5 object-cover rounded-xl shadow-2xl"
                                         src="https://lh3.googleusercontent.com/aida-public/AB6AXuAMGSlkwTJ1hlpf2ffjS9xC8dL7PE988Hkx_83wNuZ_4Yic1hVWSuaApR6_L1RVQprAhcx1v5jo4sq4H2hrEiIJEQvyC64auNM-ILY0M4LZTr6s3uCI5uU43XoWpQShazz3v6-VXmwNG44vsS5gli4IhBa-f16wnvLkVP0Eds6KRDiLUuE9tXSd8_IZIjbRqypNrkNl7dn_AmXVTWGAiMhCJyTk1jioYq3z6Z9AbjpMKRkd_S0Tze7YJf62xBL6YZJWRb-xN-jPTUU" />
@@ -375,41 +437,60 @@
                                     Each room is a masterpiece of design, offering comfort, elegance, and breathtaking
                                     views.</p>
                             </div>
-                            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                                <div
-                                    class="flex flex-col gap-4 group bg-surface-light dark:bg-surface-dark p-6 rounded-xl shadow-lg transition-transform duration-300 hover:-translate-y-2">
-                                    <div class="overflow-hidden rounded-lg"><img alt="Luxury Suite"
-                                            class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110"
-                                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuB1p3xrx2mRtkybJJ1pdSGgBfuHRBqoYScG60QI4ieScHkum-HgcHVCWKJ9zI2sdLDUEruQISZNp-2jieFomeFSiM8Pvq_Zhv-T6Ga9gaLkNm1kZMps1x3cY7OcWU-wGjupvNHeinm7YLhfKYIibzMpw_iBDYnGZInjNLe4jdRnurQ7NbWx3gsOx7sMLPpROOuo3z5HMopuhssOFyste-dOlJED591zpAxz2CuIdDmr8KBvUyvasVnKhzGuG6-iXdV7KEColtdd_Kw" />
-                                    </div>
-                                    <div class="p-2">
-                                        <h3 class="font-display text-2xl font-semibold">Luxury Suites</h3>
-                                        <p class="text-sm text-subtle-light dark:text-subtle-dark mt-1">Spacious suites
-                                            with private balconies and premium amenities.</p>
+                            <div id="rooms-carousel" class="relative">
+                                <div class="overflow-hidden">
+                                    <div id="rooms-track" data-carousel-track
+                                        class="flex md:grid md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8">
+                                        <div class="w-[85%] md:w-full flex-shrink-0">
+                                            <div
+                                                class="flex flex-col gap-4 group bg-surface-light dark:bg-surface-dark p-6 rounded-xl shadow-lg transition-transform duration-300 hover:-translate-y-2 h-full">
+                                                <div class="overflow-hidden rounded-lg"><img alt="Luxury Suite"
+                                                        class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110"
+                                                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuB1p3xrx2mRtkybJJ1pdSGgBfuHRBqoYScG60QI4ieScHkum-HgcHVCWKJ9zI2sdLDUEruQISZNp-2jieFomeFSiM8Pvq_Zhv-T6Ga9gaLkNm1kZMps1x3cY7OcWU-wGjupvNHeinm7YLhfKYIibzMpw_iBDYnGZInjNLe4jdRnurQ7NbWx3gsOx7sMLPpROOuo3z5HMopuhssOFyste-dOlJED591zpAxz2CuIdDmr8KBvUyvasVnKhzGuG6-iXdV7KEColtdd_Kw" />
+                                                </div>
+                                                <div class="p-2">
+                                                    <h3 class="font-display text-2xl font-semibold">Luxury Suites</h3>
+                                                    <p class="text-sm text-subtle-light dark:text-subtle-dark mt-1">
+                                                        Spacious suites
+                                                        with private balconies and premium amenities.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="w-[85%] md:w-full flex-shrink-0 lg:mt-16">
+                                            <div
+                                                class="flex flex-col gap-4 group bg-surface-light dark:bg-surface-dark p-6 rounded-xl shadow-lg transition-transform duration-300 hover:-translate-y-2 h-full">
+                                                <div class="overflow-hidden rounded-lg"><img alt="Deluxe Room"
+                                                        class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110"
+                                                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuBTFkJQkrlVzrXZVYGTWPBZXKECV5G5qM7afCOc4uuOiAZuT9PQ66oK4S08jqwWz4lhAYOe_gbZsWhLJYRXpaqwxVZsjBcBPpE99_qhvb31DgfgI3d9oJqNYH4N3F6Id9Jvu9LRc-Xgq-lleN6NrhEckr6SwhNoJqBVooCfR7XOCtMieYiCt5yFcmatRdw-gluZVofwFN2rjfSWpl9OJcgx0rD79r5oz9raNGbdcocJQgvLWlr1jypb_L_vDZJmteyxypMkLHdeQ9Q" />
+                                                </div>
+                                                <div class="p-2">
+                                                    <h3 class="font-display text-2xl font-semibold">Deluxe Rooms</h3>
+                                                    <p class="text-sm text-subtle-light dark:text-subtle-dark mt-1">
+                                                        Comfort and
+                                                        elegance with stunning views and modern conveniences.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="w-[85%] md:w-full flex-shrink-0">
+                                            <div
+                                                class="flex flex-col gap-4 group bg-surface-light dark:bg-surface-dark p-6 rounded-xl shadow-lg transition-transform duration-300 hover:-translate-y-2 h-full">
+                                                <div class="overflow-hidden rounded-lg"><img alt="Standard Room"
+                                                        class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110"
+                                                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuDCzFUmLoDQCmk7BqMESdV7Q7GOWi9fhRFQsFd403NMHEURXfKhHz-_gVDr1TmSIRpdR61htwguKpi_vvy8VPiko28GHtVSfgP2rhfg8qp2lt0gxjmca1jDXsUF9VzWGvWLcbXGWD3hKan_Ioddn1J0k7Z6_fk7W78OO5t16s3ToJhqdmlyFlrMHfaPZ8wd8xn40DSiqOIWIXC1b8PtFPkHBRRMUSiArsX47ARIb56tZMuSrwzhjxChPf9KTIvxXUxD1toMI5IchNA" />
+                                                </div>
+                                                <div class="p-2">
+                                                    <h3 class="font-display text-2xl font-semibold">Standard Rooms</h3>
+                                                    <p class="text-sm text-subtle-light dark:text-subtle-dark mt-1">A
+                                                        cozy and
+                                                        comfortable stay for budget-conscious travelers.</p>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
-                                <div
-                                    class="flex flex-col gap-4 group bg-surface-light dark:bg-surface-dark p-6 rounded-xl shadow-lg transition-transform duration-300 hover:-translate-y-2 mt-0 lg:mt-16">
-                                    <div class="overflow-hidden rounded-lg"><img alt="Deluxe Room"
-                                            class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110"
-                                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuBTFkJQkrlVzrXZVYGTWPBZXKECV5G5qM7afCOc4uuOiAZuT9PQ66oK4S08jqwWz4lhAYOe_gbZsWhLJYRXpaqwxVZsjBcBPpE99_qhvb31DgfgI3d9oJqNYH4N3F6Id9Jvu9LRc-Xgq-lleN6NrhEckr6SwhNoJqBVooCfR7XOCtMieYiCt5yFcmatRdw-gluZVofwFN2rjfSWpl9OJcgx0rD79r5oz9raNGbdcocJQgvLWlr1jypb_L_vDZJmteyxypMkLHdeQ9Q" />
-                                    </div>
-                                    <div class="p-2">
-                                        <h3 class="font-display text-2xl font-semibold">Deluxe Rooms</h3>
-                                        <p class="text-sm text-subtle-light dark:text-subtle-dark mt-1">Comfort and
-                                            elegance with stunning views and modern conveniences.</p>
-                                    </div>
-                                </div>
-                                <div
-                                    class="flex flex-col gap-4 group bg-surface-light dark:bg-surface-dark p-6 rounded-xl shadow-lg transition-transform duration-300 hover:-translate-y-2">
-                                    <div class="overflow-hidden rounded-lg"><img alt="Standard Room"
-                                            class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110"
-                                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuDCzFUmLoDQCmk7BqMESdV7Q7GOWi9fhRFQsFd403NMHEURXfKhHz-_gVDr1TmSIRpdR61htwguKpi_vvy8VPiko28GHtVSfgP2rhfg8qp2lt0gxjmca1jDXsUF9VzWGvWLcbXGWD3hKan_Ioddn1J0k7Z6_fk7W78OO5t16s3ToJhqdmlyFlrMHfaPZ8wd8xn40DSiqOIWIXC1b8PtFPkHBRRMUSiArsX47ARIb56tZMuSrwzhjxChPf9KTIvxXUxD1toMI5IchNA" />
-                                    </div>
-                                    <div class="p-2">
-                                        <h3 class="font-display text-2xl font-semibold">Standard Rooms</h3>
-                                        <p class="text-sm text-subtle-light dark:text-subtle-dark mt-1">A cozy and
-                                            comfortable stay for budget-conscious travelers.</p>
+                                <div class="md:hidden flex justify-center items-center mt-8">
+                                    <div id="room-dots" data-carousel-dots class="flex gap-2 items-center">
+                                        <!-- Dots will be generated by JS -->
                                     </div>
                                 </div>
                             </div>
@@ -417,7 +498,7 @@
 
                         <section class="py-16" id="food">
                             <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-                                <div class="relative h-[500px] lg:h-[650px] w-full">
+                                <div class="relative h-[450px] lg:h-[650px] w-full">
                                     <img alt="Dining Table"
                                         class="absolute top-0 left-0 w-full h-[90%] object-cover rounded-xl shadow-2xl"
                                         src="https://lh3.googleusercontent.com/aida-public/AB6AXuBXXfVzoEJSijgt0ZKpzm_aBoOpQo6DWdjVoZJzKiYqER8bsjScIR2k1LTp3XKD6WKdS6Ah1GjO-gSUyc5oNqxNp6gI8A0yNvyulo2TZ8ASdiMFo6ju9S2BtwNu0BbL9OxnFbMapkgjBEChEHHcEyViwMSQwgrN_CLm8EicRXODCIOI8-JCemoZenlVnYeNWxLetSIxdEMFYUMhwL1b_2-9afIM-RbiodfDpX1KR63R78Z-53HEKi08tfci4QUsYUW1W0LAuew9nOE" />
@@ -456,7 +537,7 @@
                                 </div>
                             </div>
                         </section>
-                        <section class="py-16 text-center bg-primary/10 dark:bg-primary/20 p-12 md:p-16 rounded-xl"
+                        <section class="py-16 text-center bg-primary/10 dark:bg-primary/20 p-8 md:p-16 rounded-xl"
                             id="contact">
                             <h2 class="font-display text-4xl font-bold">Ready for Your Escape?</h2>
                             <p
@@ -473,9 +554,9 @@
                                     class="flex items-center justify-center rounded-full h-14 px-8 text-base font-semibold bg-green-600 text-white hover:bg-green-700 transition-colors duration-300 transform hover:scale-105 shadow-lg">
                                     <svg class="w-6 h-6 mr-3" fill="currentColor" viewBox="0 0 24 24"
                                         xmlns="http://www.w3.org/2000/svg">
-                                        <path
-                                            d="M12.04 2C6.58 2 2.13 6.45 2.13 12c0 1.8.49 3.47 1.32 4.91L2.06 22l5.23-1.39c1.39.77 2.96 1.23 4.62 1.23h.12c5.46 0 9.91-4.45 9.91-9.91C22.08 6.45 17.62 2 12.04 2zM9.99 16.13l-2.8-2.8 1.06-1.06 1.74 1.74 3.96-3.96 1.06 1.06-5.02 5.02z">
-                                        </path>
+                                        <path fill-rule="evenodd"
+                                            d="M18.425 5.575a1.002 1.002 0 0 1 1.414 0l.002.002a1 1 0 0 1 0 1.414l-1.06 1.06a.5.5 0 0 0 0 .707l1.06 1.06a1 1 0 0 1 0 1.414l-.002.002a1 1 0 0 1-1.414 0l-1.06-1.06a.5.5 0 0 0-.707 0l-1.06 1.06a1 1 0 0 1-1.414 0l-.002-.002a1 1 0 0 1 0-1.414l1.06-1.06a.5.5 0 0 0 0-.707l-1.06-1.06a1 1 0 0 1 0-1.414l.002-.002a1 1 0 0 1 1.414 0l1.06 1.06a.5.5 0 0 0 .707 0l1.06-1.06zM12 2C6.477 2 2 6.477 2 12c0 1.758.45 3.423 1.258 4.899L2.05 22l5.05-1.208C8.52 21.55 10.185 22 12 22c5.523 0 10-4.477 10-10S17.523 2 12 2zm-1.218 13.91c-.244.123-.51.196-.78.196c-.314 0-.616-.09-.884-.265l-2.09-1.385a1.2 1.2 0 0 1-.58-1.008v-3.494a1.2 1.2 0 0 1 .575-1.006l2.09-1.39a1.92 1.92 0 0 1 1.77 0l2.09 1.39a1.2 1.2 0 0 1 .576 1.007v3.493a1.2 1.2 0 0 1-.58 1.008l-2.09 1.385z"
+                                            clip-rule="evenodd" />
                                     </svg>
                                     <span>Message on WhatsApp</span>
                                 </button>
@@ -501,7 +582,8 @@
                 </div>
             </footer>
         </div>
-        <div class="fixed bottom-6 right-6 flex flex-col items-end gap-4 z-50">
+        <!-- Floating Action Buttons -->
+        <div class="fixed bottom-6 right-6 hidden sm:flex flex-col items-end gap-4 z-50">
             <button
                 class="bg-primary rounded-full p-4 text-white shadow-xl hover:bg-opacity-90 transition-all duration-300 transform hover:scale-110">
                 <svg fill="none" height="28" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
@@ -515,15 +597,169 @@
             <button
                 class="bg-green-600 rounded-full p-4 text-white shadow-xl hover:bg-green-700 transition-colors duration-300 transform hover:scale-110">
                 <svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path
-                        d="M12.04 2C6.58 2 2.13 6.45 2.13 12c0 1.8.49 3.47 1.32 4.91L2.06 22l5.23-1.39c1.39.77 2.96 1.23 4.62 1.23h.12c5.46 0 9.91-4.45 9.91-9.91C22.08 6.45 17.62 2 12.04 2zM9.99 16.13l-2.8-2.8 1.06-1.06 1.74 1.74 3.96-3.96 1.06 1.06-5.02 5.02z">
-                    </path>
+                    <path fill-rule="evenodd"
+                        d="M18.425 5.575a1.002 1.002 0 0 1 1.414 0l.002.002a1 1 0 0 1 0 1.414l-1.06 1.06a.5.5 0 0 0 0 .707l1.06 1.06a1 1 0 0 1 0 1.414l-.002.002a1 1 0 0 1-1.414 0l-1.06-1.06a.5.5 0 0 0-.707 0l-1.06 1.06a1 1 0 0 1-1.414 0l-.002-.002a1 1 0 0 1 0-1.414l1.06-1.06a.5.5 0 0 0 0-.707l-1.06-1.06a1 1 0 0 1 0-1.414l.002-.002a1 1 0 0 1 1.414 0l1.06 1.06a.5.5 0 0 0 .707 0l1.06-1.06zM12 2C6.477 2 2 6.477 2 12c0 1.758.45 3.423 1.258 4.899L2.05 22l5.05-1.208C8.52 21.55 10.185 22 12 22c5.523 0 10-4.477 10-10S17.523 2 12 2zm-1.218 13.91c-.244.123-.51.196-.78.196c-.314 0-.616-.09-.884-.265l-2.09-1.385a1.2 1.2 0 0 1-.58-1.008v-3.494a1.2 1.2 0 0 1 .575-1.006l2.09-1.39a1.92 1.92 0 0 1 1.77 0l2.09 1.39a1.2 1.2 0 0 1 .576 1.007v3.493a1.2 1.2 0 0 1-.58 1.008l-2.09 1.385z"
+                        clip-rule="evenodd" />
                 </svg>
                 <span class="sr-only">Message on WhatsApp</span>
             </button>
         </div>
+
+        <!-- Sticky Bottom Bar for Mobile -->
+        <div
+            class="fixed bottom-0 left-0 right-0 z-50 bg-surface-light/80 dark:bg-surface-dark/80 backdrop-blur-md shadow-[0_-2px_10px_rgba(0,0,0,0.1)] p-3 flex sm:hidden gap-3">
+            <a href="tel:+1234567890"
+                class="flex-1 flex items-center justify-center rounded-full h-12 px-4 text-sm font-semibold bg-primary text-white hover:bg-opacity-90 transition-all duration-300 transform hover:scale-105">
+                <span class="material-symbols-outlined mr-2">call</span>
+                <span>Call Now</span>
+            </a>
+            <a href="https://wa.me/1234567890" target="_blank"
+                class="flex-1 flex items-center justify-center rounded-full h-12 px-4 text-sm font-semibold bg-green-600 text-white hover:bg-green-700 transition-colors duration-300 transform hover:scale-105">
+                <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd"
+                        d="M18.425 5.575a1.002 1.002 0 0 1 1.414 0l.002.002a1 1 0 0 1 0 1.414l-1.06 1.06a.5.5 0 0 0 0 .707l1.06 1.06a1 1 0 0 1 0 1.414l-.002.002a1 1 0 0 1-1.414 0l-1.06-1.06a.5.5 0 0 0-.707 0l-1.06 1.06a1 1 0 0 1-1.414 0l-.002-.002a1 1 0 0 1 0-1.414l1.06-1.06a.5.5 0 0 0 0-.707l-1.06-1.06a1 1 0 0 1 0-1.414l.002-.002a1 1 0 0 1 1.414 0l1.06 1.06a.5.5 0 0 0 .707 0l1.06-1.06zM12 2C6.477 2 2 6.477 2 12c0 1.758.45 3.423 1.258 4.899L2.05 22l5.05-1.208C8.52 21.55 10.185 22 12 22c5.523 0 10-4.477 10-10S17.523 2 12 2zm-1.218 13.91c-.244.123-.51.196-.78.196c-.314 0-.616-.09-.884-.265l-2.09-1.385a1.2 1.2 0 0 1-.58-1.008v-3.494a1.2 1.2 0 0 1 .575-1.006l2.09-1.39a1.92 1.92 0 0 1 1.77 0l2.09 1.39a1.2 1.2 0 0 1 .576 1.007v3.493a1.2 1.2 0 0 1-.58 1.008l-2.09 1.385z"
+                        clip-rule="evenodd" />
+                </svg>
+                <span>WhatsApp</span>
+            </a>
+        </div>
     </div>
 
+    <!-- JavaScript for Mobile Menu & Carousels -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const hamburgerButton = document.getElementById('hamburger-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const closeMenuButton = document.getElementById('close-menu-button');
+            const mobileMenuLinks = document.querySelectorAll('.mobile-menu-link');
+
+            function toggleMenu() {
+                mobileMenu.classList.toggle('hidden');
+                document.body.style.overflow = mobileMenu.classList.contains('hidden') ? 'auto' : 'hidden';
+            }
+
+            hamburgerButton.addEventListener('click', toggleMenu);
+            closeMenuButton.addEventListener('click', toggleMenu);
+            mobileMenuLinks.forEach(link => {
+                link.addEventListener('click', () => setTimeout(toggleMenu, 100));
+            });
+
+            function setupCarousel(carouselId) {
+                const carousel = document.getElementById(carouselId);
+                if (!carousel) return;
+
+                const track = carousel.querySelector('[data-carousel-track]');
+                const dotsNav = carousel.querySelector('[data-carousel-dots]');
+
+                if (!track || !dotsNav) return;
+
+                const originalSlides = Array.from(track.children);
+                if (originalSlides.length <= 1) return;
+
+                const firstClone = originalSlides[0].cloneNode(true);
+                const lastClone = originalSlides[originalSlides.length - 1].cloneNode(true);
+
+                track.appendChild(firstClone);
+                track.insertBefore(lastClone, track.children[0]);
+
+                const allSlides = Array.from(track.children);
+                let currentIndex = 1;
+                let isTransitioning = false;
+
+                originalSlides.forEach((_, i) => {
+                    const dot = document.createElement('button');
+                    dot.setAttribute('aria-label', `Go to slide ${i + 1}`);
+                    dot.classList.add('w-2', 'h-2', 'rounded-full', 'bg-primary/30', 'transition-all', 'duration-300');
+                    if (i === 0) dot.classList.add('!bg-primary', 'w-4');
+                    dotsNav.appendChild(dot);
+                    dot.addEventListener('click', () => {
+                        currentIndex = i + 1;
+                        updateCarousel();
+                    });
+                });
+
+                const dots = Array.from(dotsNav.children);
+
+                const updateCarousel = (withTransition = true) => {
+                    if (isTransitioning && withTransition) return;
+                    if (withTransition) isTransitioning = true;
+
+                    const slideWidth = allSlides[1].getBoundingClientRect().width;
+                    const gap = parseInt(window.getComputedStyle(track).gap) || 16;
+                    const containerWidth = track.parentElement.getBoundingClientRect().width;
+
+                    const offsetToCenter = (containerWidth - slideWidth) / 2;
+                    const totalOffset = -(currentIndex * (slideWidth + gap)) + offsetToCenter + (gap / 2);
+
+                    track.style.transition = withTransition ? 'transform 300ms ease-in-out' : 'none';
+                    track.style.transform = `translateX(${totalOffset}px)`;
+
+                    let dotIndex = currentIndex - 1;
+                    if (currentIndex === 0) dotIndex = originalSlides.length - 1;
+                    if (currentIndex === allSlides.length - 1) dotIndex = 0;
+
+                    dots.forEach((dot, index) => {
+                        dot.classList.toggle('!bg-primary', index === dotIndex);
+                        dot.classList.toggle('w-4', index === dotIndex);
+                        dot.classList.toggle('w-2', index !== dotIndex);
+                    });
+                };
+
+                track.addEventListener('transitionend', () => {
+                    isTransitioning = false;
+                    if (currentIndex === 0) {
+                        currentIndex = allSlides.length - 2;
+                        updateCarousel(false);
+                    } else if (currentIndex >= allSlides.length - 1) {
+                        currentIndex = 1;
+                        updateCarousel(false);
+                    }
+                });
+
+                let touchStartX = 0;
+                track.addEventListener('touchstart', e => {
+                    touchStartX = e.touches[0].clientX;
+                }, { passive: true });
+
+                track.addEventListener('touchend', e => {
+                    if (isTransitioning) return;
+                    const touchEndX = e.changedTouches[0].clientX;
+                    if (Math.abs(touchStartX - touchEndX) > 50) {
+                        currentIndex += (touchStartX > touchEndX ? 1 : -1);
+                        updateCarousel();
+                    }
+                }, { passive: true });
+
+                const init = () => {
+                    if (window.innerWidth < 768) {
+                        updateCarousel(false);
+                    } else {
+                        track.style.transform = '';
+                    }
+                }
+
+                setTimeout(init, 100);
+
+                new ResizeObserver(() => {
+                    if (window.innerWidth >= 768) {
+                        track.style.transform = '';
+                        track.style.transition = 'none';
+                        dotsNav.innerHTML = ''; // Clear dots on desktop
+                    } else {
+                        if (dotsNav.children.length === 0) { // Re-init if switching to mobile
+                            setupCarousel(carouselId);
+                        } else {
+                            updateCarousel(false);
+                        }
+                    }
+                }).observe(document.body);
+            }
+
+            setupCarousel('reviews-carousel');
+            setupCarousel('rooms-carousel');
+        });
+    </script>
 </body>
 
 </html>
+"
