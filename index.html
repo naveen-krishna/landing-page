@@ -108,18 +108,194 @@
             background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('https://lh3.googleusercontent.com/aida-public/AB6AXuBfYZvCZ9vIwP6lXm18heVh21nexJr1bk7Yd7n-xXv2i0WfSZDdjc8UNwINfJSjNburnMUbNzxfAG8p3mlBByP16GziObwY1O1esRqWAoarXuhXQPT0SMKln2U4cRoK1mIrLMfrISwn_dbfOzt-6muH11T8xEx7cn-chwt_cb8YZfvkADTlFglyAG4l3UKeq5cgFB8iBGtMS42I-oAVLq-quZYHHHwOvvn3onFItIOBo2LPzOti9WfNRIEps4XS5aG51eTS2tZHFE4');
             background-size: cover;
             background-position: center;
+            background-attachment: fixed;
         }
 
-        /* Minimal ghost buttons */
+        /* Mobile-specific hero adjustments */
+        @media (max-width: 768px) {
+            .hero-bg {
+                background-attachment: scroll;
+                min-height: 100vh;
+                min-height: 100dvh;
+                min-height: 100svh;
+            }
+        }
+
+        /* Support for older mobile browsers */
+        @supports not (height: 100dvh) {
+            @media (max-width: 768px) {
+                .hero-bg {
+                    min-height: calc(100vh - env(safe-area-inset-top) - env(safe-area-inset-bottom));
+                }
+            }
+        }
+
+        /* Hero CTA Button - Based on provided design */
+        .btn-hero-cta {
+            background-color: white;
+            color: var(--brand-blue-primary);
+            border: none;
+            border-radius: 0.75rem;
+            height: 3.5rem;
+            padding: 0 2rem;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all 300ms ease;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            cursor: pointer;
+            box-shadow: 0 4px 20px rgba(9, 66, 93, 0.15);
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .btn-hero-cta:hover {
+            background-color: var(--brand-blue-primary);
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(9, 66, 93, 0.25);
+        }
+
+        .btn-hero-cta:focus {
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.3), 0 4px 20px rgba(9, 66, 93, 0.15);
+        }
+
+        .btn-hero-cta:active {
+            transform: translateY(0);
+            box-shadow: 0 4px 15px rgba(9, 66, 93, 0.2);
+        }
+
+        /* WhatsApp Button - Rectangular design */
+        .btn-whatsapp {
+            background-color: white;
+            color: var(--brand-blue-primary);
+            border: 1px solid var(--brand-blue-primary);
+            border-radius: 0.5rem;
+            /* Rectangular corners */
+            height: 2.75rem;
+            padding: 0 1.5rem;
+            font-weight: 500;
+            font-size: 0.875rem;
+            transition: all 300ms ease;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            cursor: pointer;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .btn-whatsapp:hover {
+            background-color: var(--brand-blue-primary);
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(9, 66, 93, 0.2);
+        }
+
+        .btn-whatsapp svg {
+            fill: var(--brand-blue-primary);
+        }
+
+        .btn-whatsapp:hover svg {
+            fill: white;
+        }
+
+        .btn-whatsapp:focus {
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(9, 66, 93, 0.2);
+        }
+
+        .btn-whatsapp:active {
+            transform: translateY(0);
+            box-shadow: 0 3px 10px rgba(9, 66, 93, 0.3);
+        }
+
+        /* WhatsApp Icon Animation */
+        .whatsapp-icon {
+            transition: transform 300ms ease;
+        }
+
+        .btn-whatsapp:hover .whatsapp-icon {
+            transform: scale(1.1);
+        }
+
+        /* New Button Theme - Based on provided design */
+        .btn-outlined {
+            color: var(--brand-blue-primary);
+            background: transparent;
+            border: 1px solid var(--brand-blue-primary);
+            border-radius: 0.5rem;
+            height: 2.75rem;
+            padding: 0 1.5rem;
+            font-weight: 500;
+            font-size: 0.875rem;
+            transition: all 200ms ease;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .btn-outlined:hover {
+            background: var(--brand-blue-primary);
+            color: white;
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(9, 66, 93, 0.2);
+        }
+
+        .btn-outlined:focus {
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(9, 66, 93, 0.2);
+        }
+
+        .btn-outlined:active {
+            background: var(--brand-blue-primary);
+            color: white;
+            transform: translateY(0);
+            box-shadow: 0 2px 8px rgba(9, 66, 93, 0.3);
+        }
+
+        .btn-filled {
+            color: white;
+            background: var(--brand-blue-primary);
+            border: 1px solid var(--brand-blue-primary);
+            border-radius: 0.5rem;
+            height: 2.75rem;
+            padding: 0 1.5rem;
+            font-weight: 500;
+            font-size: 0.875rem;
+            transition: all 200ms ease;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .btn-filled:hover {
+            background: var(--brand-blue-secondary);
+            border-color: var(--brand-blue-secondary);
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(9, 66, 93, 0.3);
+        }
+
+        .btn-filled:focus {
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(9, 66, 93, 0.2);
+        }
+
+
+        /* Legacy button styles for backward compatibility */
         .btn-ghost-light {
             color: #FFFFFF;
             background: transparent;
             border: 1px solid rgba(255, 255, 255, 0.35);
             border-radius: 9999px;
             height: 2.75rem;
-            /* ~h-11 */
             padding: 0 1.25rem;
-            /* ~px-5 */
             font-weight: 500;
             transition: background-color 200ms ease, border-color 200ms ease, color 200ms ease;
         }
@@ -158,6 +334,33 @@
         /* Enhanced shadow for FABs */
         .shadow-3xl {
             box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25), 0 0 0 1px rgba(255, 255, 255, 0.05);
+        }
+
+        /* Sticky buttons visibility control */
+        .sticky-buttons {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.3s ease, transform 0.3s ease;
+            pointer-events: none;
+        }
+
+        .sticky-buttons.visible {
+            opacity: 1;
+            transform: translateY(0);
+            pointer-events: auto;
+        }
+
+        .sticky-bottom-bar {
+            opacity: 0;
+            transform: translateY(100%);
+            transition: opacity 0.3s ease, transform 0.3s ease;
+            pointer-events: none;
+        }
+
+        .sticky-bottom-bar.visible {
+            opacity: 1;
+            transform: translateY(0);
+            pointer-events: auto;
         }
     </style>
 </head>
@@ -233,8 +436,8 @@
             <main class="flex-1">
                 <!-- Hero Section -->
                 <section
-                    class="relative hero-bg w-full h-screen flex items-center justify-center text-center text-white">
-                    <div class="flex flex-col gap-6 max-w-3xl px-4">
+                    class="relative hero-bg w-full h-screen min-h-[100vh] min-h-[100dvh] flex items-center justify-center text-center text-white">
+                    <div class="flex flex-col gap-6 max-w-3xl px-4 py-8 sm:py-0">
                         <h1 class="font-display text-5xl md:text-7xl font-bold leading-tight tracking-tight">
                             Your Perfect Getaway Awaits
                         </h1>
@@ -243,19 +446,17 @@
                             our resort offers an unforgettable escape with world-class amenities and unparalleled
                             service.
                         </p>
-                        <div class="mt-6 flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
-                            <button
-                                class="btn-ghost-light inline-flex items-center justify-center text-sm md:text-base">
+                        <!-- Action Buttons -->
+                        <div class="mt-6 flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center">
+                            <button class="btn-outlined">
                                 <span class="material-symbols-outlined mr-2">call</span>
                                 <span>Call Now for Best Rates</span>
                             </button>
-                            <button
-                                class="btn-ghost-light inline-flex items-center justify-center text-sm md:text-base">
+                            <button class="btn-whatsapp">
                                 <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24"
                                     xmlns="http://www.w3.org/2000/svg">
-                                    <path fill-rule="evenodd"
-                                        d="M18.425 5.575a1.002 1.002 0 0 1 1.414 0l.002.002a1 1 0 0 1 0 1.414l-1.06 1.06a.5.5 0 0 0 0 .707l1.06 1.06a1 1 0 0 1 0 1.414l-.002.002a1 1 0 0 1-1.414 0l-1.06-1.06a.5.5 0 0 0-.707 0l-1.06 1.06a1 1 0 0 1-1.414 0l-.002-.002a1 1 0 0 1 0-1.414l1.06-1.06a.5.5 0 0 0 0-.707l-1.06-1.06a1 1 0 0 1 0-1.414l.002-.002a1 1 0 0 1 1.414 0l1.06 1.06a.5.5 0 0 0 .707 0l1.06-1.06zM12 2C6.477 2 2 6.477 2 12c0 1.758.45 3.423 1.258 4.899L2.05 22l5.05-1.208C8.52 21.55 10.185 22 12 22c5.523 0 10-4.477 10-10S17.523 2 12 2zm-1.218 13.91c-.244.123-.51.196-.78.196c-.314 0-.616-.09-.884-.265l-2.09-1.385a1.2 1.2 0 0 1-.58-1.008v-3.494a1.2 1.2 0 0 1 .575-1.006l2.09-1.39a1.92 1.92 0 0 1 1.77 0l2.09 1.39a1.2 1.2 0 0 1 .576 1.007v3.493a1.2 1.2 0 0 1-.58 1.008l-2.09 1.385z"
-                                        clip-rule="evenodd" />
+                                    <path
+                                        d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.488" />
                                 </svg>
                                 <span>Message on WhatsApp</span>
                             </button>
@@ -702,19 +903,16 @@
                                 class="mt-4 text-subtle-light dark:text-subtle-dark text-lg max-w-2xl mx-auto leading-relaxed">
                                 Contact us directly to get the best rates and personalized service for your dream
                                 vacation.</p>
-                            <div class="mt-8 flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
-                                <button
-                                    class="btn-ghost-dark inline-flex items-center justify-center text-sm md:text-base">
+                            <div class="mt-8 flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center">
+                                <button class="btn-outlined">
                                     <span class="material-symbols-outlined mr-2">call</span>
                                     <span>Call Now &amp; Book Your Stay</span>
                                 </button>
-                                <button
-                                    class="btn-ghost-dark inline-flex items-center justify-center text-sm md:text-base">
+                                <button class="btn-whatsapp">
                                     <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24"
                                         xmlns="http://www.w3.org/2000/svg">
-                                        <path fill-rule="evenodd"
-                                            d="M18.425 5.575a1.002 1.002 0 0 1 1.414 0l.002.002a1 1 0 0 1 0 1.414l-1.06 1.06a.5.5 0 0 0 0 .707l1.06 1.06a1 1 0 0 1 0 1.414l-.002.002a1 1 0 0 1-1.414 0l-1.06-1.06a.5.5 0 0 0-.707 0l-1.06 1.06a1 1 0 0 1-1.414 0l-.002-.002a1 1 0 0 1 0-1.414l1.06-1.06a.5.5 0 0 0 0-.707l-1.06-1.06a1 1 0 0 1 0-1.414l.002-.002a1 1 0 0 1 1.414 0l1.06 1.06a.5.5 0 0 0 .707 0l1.06-1.06zM12 2C6.477 2 2 6.477 2 12c0 1.758.45 3.423 1.258 4.899L2.05 22l5.05-1.208C8.52 21.55 10.185 22 12 22c5.523 0 10-4.477 10-10S17.523 2 12 2zm-1.218 13.91c-.244.123-.51.196-.78.196c-.314 0-.616-.09-.884-.265l-2.09-1.385a1.2 1.2 0 0 1-.58-1.008v-3.494a1.2 1.2 0 0 1 .575-1.006l2.09-1.39a1.92 1.92 0 0 1 1.77 0l2.09 1.39a1.2 1.2 0 0 1 .576 1.007v3.493a1.2 1.2 0 0 1-.58 1.008l-2.09 1.385z"
-                                            clip-rule="evenodd" />
+                                        <path
+                                            d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.488" />
                                     </svg>
                                     <span>Message on WhatsApp</span>
                                 </button>
@@ -742,12 +940,13 @@
             </footer>
         </div>
         <!-- Floating Action Buttons -->
-        <div class="fixed bottom-6 right-6 hidden sm:flex flex-col items-end gap-4 z-50">
+        <div id="floating-buttons"
+            class="sticky-buttons fixed bottom-6 right-6 hidden sm:flex flex-col items-end gap-4 z-50">
             <button
-                class="group bg-brand-terracotta rounded-full p-4 text-white shadow-2xl hover:shadow-3xl transition-all duration-500 transform hover:scale-110 hover:-translate-y-1 backdrop-blur-sm border border-white/10">
+                class="group bg-brand-blue-primary rounded-lg p-4 text-white shadow-2xl hover:shadow-3xl transition-all duration-500 transform hover:scale-110 hover:-translate-y-1 backdrop-blur-sm border border-brand-blue-primary/20">
                 <div class="relative">
-                    <svg fill="none" height="28" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                        stroke-width="2" viewBox="0 0 24 24" width="28" xmlns="http://www.w3.org/2000/svg"
+                    <svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                        stroke-width="2" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"
                         class="transition-transform duration-300 group-hover:rotate-12">
                         <path
                             d="M15.05 5A5 5 0 0 1 19 8.95M15.05 1A9 9 0 0 1 23 8.94m-1 7.98v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 13.98z">
@@ -755,45 +954,42 @@
                     </svg>
                     <!-- Subtle glow effect -->
                     <div
-                        class="absolute inset-0 bg-white/20 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-sm">
+                        class="absolute inset-0 bg-white/20 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-sm">
                     </div>
                 </div>
                 <span class="sr-only">Call Now</span>
             </button>
             <button
-                class="group bg-green-600 rounded-full p-4 text-white shadow-2xl hover:shadow-3xl transition-all duration-500 transform hover:scale-110 hover:-translate-y-1 backdrop-blur-sm border border-white/10 hover:bg-green-500">
+                class="group bg-white rounded-2xl p-4 text-brand-blue-primary shadow-2xl hover:shadow-3xl transition-all duration-500 transform hover:scale-110 hover:-translate-y-1 backdrop-blur-sm border border-brand-blue-primary/20">
                 <div class="relative">
-                    <svg class="w-7 h-7 transition-transform duration-300 group-hover:rotate-12" fill="currentColor"
-                        viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path fill-rule="evenodd"
-                            d="M18.425 5.575a1.002 1.002 0 0 1 1.414 0l.002.002a1 1 0 0 1 0 1.414l-1.06 1.06a.5.5 0 0 0 0 .707l1.06 1.06a1 1 0 0 1 0 1.414l-.002.002a1 1 0 0 1-1.414 0l-1.06-1.06a.5.5 0 0 0-.707 0l-1.06 1.06a1 1 0 0 1-1.414 0l-.002-.002a1 1 0 0 1 0-1.414l1.06-1.06a.5.5 0 0 0 0-.707l-1.06-1.06a1 1 0 0 1 0-1.414l.002-.002a1 1 0 0 1 1.414 0l1.06 1.06a.5.5 0 0 0 .707 0l1.06-1.06zM12 2C6.477 2 2 6.477 2 12c0 1.758.45 3.423 1.258 4.899L2.05 22l5.05-1.208C8.52 21.55 10.185 22 12 22c5.523 0 10-4.477 10-10S17.523 2 12 2zm-1.218 13.91c-.244.123-.51.196-.78.196c-.314 0-.616-.09-.884-.265l-2.09-1.385a1.2 1.2 0 0 1-.58-1.008v-3.494a1.2 1.2 0 0 1 .575-1.006l2.09-1.39a1.92 1.92 0 0 1 1.77 0l2.09 1.39a1.2 1.2 0 0 1 .576 1.007v3.493a1.2 1.2 0 0 1-.58 1.008l-2.09 1.385z"
-                            clip-rule="evenodd" />
+                    <svg class="w-6 h-6 whatsapp-icon transition-transform duration-300 group-hover:scale-110"
+                        fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.488" />
                     </svg>
                     <!-- Subtle glow effect -->
                     <div
-                        class="absolute inset-0 bg-white/20 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-sm">
+                        class="absolute inset-0 bg-brand-blue-primary/10 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-sm">
                     </div>
                 </div>
-                <span class="sr-only">Message on WhatsApp</span>
+                <span class="sr-only">View Details on WhatsApp</span>
             </button>
         </div>
 
         <!-- Sticky Bottom Bar for Mobile -->
-        <div
-            class="fixed bottom-0 left-0 right-0 z-50 bg-surface-light/90 dark:bg-surface-dark/90 backdrop-blur-lg shadow-[0_-4px_20px_rgba(0,0,0,0.15)] border-t border-border-light/50 dark:border-border-dark/50 p-4 flex sm:hidden gap-3">
-            <a href="tel:+1234567890"
-                class="flex-1 btn-ghost-dark inline-flex items-center justify-center text-sm group">
+        <div id="sticky-bottom-bar"
+            class="sticky-bottom-bar fixed bottom-0 left-0 right-0 z-50 bg-surface-light/90 dark:bg-surface-dark/90 backdrop-blur-lg shadow-[0_-4px_20px_rgba(0,0,0,0.15)] border-t border-border-light/50 dark:border-border-dark/50 p-4 flex sm:hidden gap-3">
+            <a href="tel:+1234567890" class="flex-1 btn-outlined inline-flex items-center justify-center text-sm group">
                 <span
                     class="material-symbols-outlined mr-2 transition-transform duration-300 group-hover:scale-110">call</span>
                 <span>Call Now</span>
             </a>
             <a href="https://wa.me/1234567890" target="_blank"
-                class="flex-1 btn-ghost-dark inline-flex items-center justify-center text-sm group">
+                class="flex-1 btn-whatsapp inline-flex items-center justify-center text-sm group">
                 <svg class="w-5 h-5 mr-2 transition-transform duration-300 group-hover:scale-110" fill="currentColor"
                     viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path fill-rule="evenodd"
-                        d="M18.425 5.575a1.002 1.002 0 0 1 1.414 0l.002.002a1 1 0 0 1 0 1.414l-1.06 1.06a.5.5 0 0 0 0 .707l1.06 1.06a1 1 0 0 1 0 1.414l-.002.002a1 1 0 0 1-1.414 0l-1.06-1.06a.5.5 0 0 0-.707 0l-1.06 1.06a1 1 0 0 1-1.414 0l-.002-.002a1 1 0 0 1 0-1.414l1.06-1.06a.5.5 0 0 0 0-.707l-1.06-1.06a1 1 0 0 1 0-1.414l.002-.002a1 1 0 0 1 1.414 0l1.06 1.06a.5.5 0 0 0 .707 0l1.06-1.06zM12 2C6.477 2 2 6.477 2 12c0 1.758.45 3.423 1.258 4.899L2.05 22l5.05-1.208C8.52 21.55 10.185 22 12 22c5.523 0 10-4.477 10-10S17.523 2 12 2zm-1.218 13.91c-.244.123-.51.196-.78.196c-.314 0-.616-.09-.884-.265l-2.09-1.385a1.2 1.2 0 0 1-.58-1.008v-3.494a1.2 1.2 0 0 1 .575-1.006l2.09-1.39a1.92 1.92 0 0 1 1.77 0l2.09 1.39a1.2 1.2 0 0 1 .576 1.007v3.493a1.2 1.2 0 0 1-.58 1.008l-2.09 1.385z"
-                        clip-rule="evenodd" />
+                    <path
+                        d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.488" />
                 </svg>
                 <span>WhatsApp</span>
             </a>
@@ -803,6 +999,46 @@
     <!-- JavaScript for Mobile Menu & Carousels -->
     <script>
         document.addEventListener('DOMContentLoaded', function () {
+            // Sticky buttons visibility control
+            function handleStickyButtonsVisibility() {
+                const heroSection = document.querySelector('.hero-bg');
+                const floatingButtons = document.getElementById('floating-buttons');
+                const stickyBottomBar = document.getElementById('sticky-bottom-bar');
+
+                if (!heroSection || !floatingButtons || !stickyBottomBar) return;
+
+                const heroHeight = heroSection.offsetHeight;
+                const scrollPosition = window.scrollY;
+
+                // Show buttons when scrolled past hero section
+                if (scrollPosition > heroHeight * 0.8) { // Show when 80% past hero
+                    floatingButtons.classList.add('visible');
+                    stickyBottomBar.classList.add('visible');
+                } else {
+                    floatingButtons.classList.remove('visible');
+                    stickyBottomBar.classList.remove('visible');
+                }
+            }
+
+            // Initial check
+            handleStickyButtonsVisibility();
+
+            // Listen for scroll events with throttling for better performance
+            let scrollTimeout;
+            window.addEventListener('scroll', function () {
+                if (scrollTimeout) {
+                    clearTimeout(scrollTimeout);
+                }
+                scrollTimeout = setTimeout(handleStickyButtonsVisibility, 10);
+            });
+
+            // Also listen for resize events in case hero height changes
+            window.addEventListener('resize', function () {
+                if (scrollTimeout) {
+                    clearTimeout(scrollTimeout);
+                }
+                scrollTimeout = setTimeout(handleStickyButtonsVisibility, 100);
+            });
             const hamburgerButton = document.getElementById('hamburger-button');
             const mobileMenu = document.getElementById('mobile-menu');
             const closeMenuButton = document.getElementById('close-menu-button');
