@@ -45,6 +45,55 @@
         };
     </script>
     <style>
+        :root {
+            --brand-white: #FFFFFF;
+            --brand-terracotta: #C67864;
+            --brand-blue-primary: #09425D;
+            --brand-blue-secondary: #092743;
+            --brand-charcoal: #2E302F;
+        }
+
+        /* Brand color utilities */
+        .bg-brand-white {
+            background-color: var(--brand-white);
+        }
+
+        .text-brand-white {
+            color: var(--brand-white);
+        }
+
+        .bg-brand-terracotta {
+            background-color: var(--brand-terracotta);
+        }
+
+        .text-brand-terracotta {
+            color: var(--brand-terracotta);
+        }
+
+        .bg-brand-blue-primary {
+            background-color: var(--brand-blue-primary);
+        }
+
+        .text-brand-blue-primary {
+            color: var(--brand-blue-primary);
+        }
+
+        .bg-brand-blue-secondary {
+            background-color: var(--brand-blue-secondary);
+        }
+
+        .text-brand-blue-secondary {
+            color: var(--brand-blue-secondary);
+        }
+
+        .bg-brand-charcoal {
+            background-color: var(--brand-charcoal);
+        }
+
+        .text-brand-charcoal {
+            color: var(--brand-charcoal);
+        }
+
         .icon {
             width: 1.5rem;
             height: 1.5rem;
@@ -59,6 +108,51 @@
             background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('https://lh3.googleusercontent.com/aida-public/AB6AXuBfYZvCZ9vIwP6lXm18heVh21nexJr1bk7Yd7n-xXv2i0WfSZDdjc8UNwINfJSjNburnMUbNzxfAG8p3mlBByP16GziObwY1O1esRqWAoarXuhXQPT0SMKln2U4cRoK1mIrLMfrISwn_dbfOzt-6muH11T8xEx7cn-chwt_cb8YZfvkADTlFglyAG4l3UKeq5cgFB8iBGtMS42I-oAVLq-quZYHHHwOvvn3onFItIOBo2LPzOti9WfNRIEps4XS5aG51eTS2tZHFE4');
             background-size: cover;
             background-position: center;
+        }
+
+        /* Minimal ghost buttons */
+        .btn-ghost-light {
+            color: #FFFFFF;
+            background: transparent;
+            border: 1px solid rgba(255, 255, 255, 0.35);
+            border-radius: 9999px;
+            height: 2.75rem;
+            /* ~h-11 */
+            padding: 0 1.25rem;
+            /* ~px-5 */
+            font-weight: 500;
+            transition: background-color 200ms ease, border-color 200ms ease, color 200ms ease;
+        }
+
+        .btn-ghost-light:hover {
+            border-color: rgba(255, 255, 255, 0.6);
+            background: rgba(255, 255, 255, 0.08);
+        }
+
+        .btn-ghost-light:focus {
+            outline: none;
+            box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.35);
+        }
+
+        .btn-ghost-dark {
+            color: var(--brand-terracotta);
+            background: transparent;
+            border: 1px solid rgba(198, 120, 100, 0.4);
+            border-radius: 9999px;
+            height: 2.75rem;
+            padding: 0 1.25rem;
+            font-weight: 500;
+            transition: background-color 200ms ease, border-color 200ms ease, color 200ms ease;
+        }
+
+        .btn-ghost-dark:hover {
+            border-color: rgba(198, 120, 100, 0.75);
+            background: rgba(198, 120, 100, 0.08);
+        }
+
+        .btn-ghost-dark:focus {
+            outline: none;
+            box-shadow: 0 0 0 2px rgba(198, 120, 100, 0.3);
         }
     </style>
 </head>
@@ -96,6 +190,7 @@
         <div class="flex h-full grow flex-col">
             <header
                 class="absolute top-0 z-50 flex items-center justify-between whitespace-nowrap w-full px-4 md:px-10 py-4 transition-all duration-300">
+                <!-- Header -->
                 <div class="flex items-center gap-3 text-white">
                     <div class="h-8 w-8 text-white">
                         <svg fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
@@ -113,8 +208,8 @@
                     <a class="hover:text-white transition-colors duration-300" href="#contact">Contact</a>
                 </nav>
                 <div class="hidden md:flex items-center gap-3">
-                    <button
-                        class="flex min-w-[100px] items-center justify-center rounded-full h-11 px-6 text-sm font-semibold bg-primary text-white hover:bg-opacity-90 transition-all duration-300 transform hover:scale-105">
+                    <button class="btn-ghost-light inline-flex items-center justify-center text-sm">
+                        <span class="material-symbols-outlined mr-2">call</span>
                         <span>Call Now</span>
                     </button>
                 </div>
@@ -129,7 +224,9 @@
                     </svg>
                 </button>
             </header>
+            <!-- Main Content -->
             <main class="flex-1">
+                <!-- Hero Section -->
                 <section
                     class="relative hero-bg w-full h-screen flex items-center justify-center text-center text-white">
                     <div class="flex flex-col gap-6 max-w-3xl px-4">
@@ -139,15 +236,15 @@
                             luxury. Nestled amidst breathtaking natural beauty, our resort offers an unforgettable
                             escape with world-class amenities and unparalleled service. Call us now for direct enquiries
                             and exclusive offers.</p>
-                        <div class="mt-6 flex flex-col sm:flex-row gap-4 justify-center">
+                        <div class="mt-6 flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
                             <button
-                                class="flex items-center justify-center rounded-full h-14 px-8 text-base font-semibold bg-primary text-white hover:bg-opacity-90 transition-all duration-300 transform hover:scale-105 shadow-lg">
+                                class="btn-ghost-light inline-flex items-center justify-center text-sm md:text-base">
                                 <span class="material-symbols-outlined mr-2">call</span>
                                 <span>Call Now for Best Rates</span>
                             </button>
                             <button
-                                class="flex items-center justify-center rounded-full h-14 px-8 text-base font-semibold bg-green-600 text-white hover:bg-green-700 transition-colors duration-300 transform hover:scale-105 shadow-lg">
-                                <svg class="w-6 h-6 mr-3" fill="currentColor" viewBox="0 0 24 24"
+                                class="btn-ghost-light inline-flex items-center justify-center text-sm md:text-base">
+                                <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24"
                                     xmlns="http://www.w3.org/2000/svg">
                                     <path fill-rule="evenodd"
                                         d="M18.425 5.575a1.002 1.002 0 0 1 1.414 0l.002.002a1 1 0 0 1 0 1.414l-1.06 1.06a.5.5 0 0 0 0 .707l1.06 1.06a1 1 0 0 1 0 1.414l-.002.002a1 1 0 0 1-1.414 0l-1.06-1.06a.5.5 0 0 0-.707 0l-1.06 1.06a1 1 0 0 1-1.414 0l-.002-.002a1 1 0 0 1 0-1.414l1.06-1.06a.5.5 0 0 0 0-.707l-1.06-1.06a1 1 0 0 1 0-1.414l.002-.002a1 1 0 0 1 1.414 0l1.06 1.06a.5.5 0 0 0 .707 0l1.06-1.06zM12 2C6.477 2 2 6.477 2 12c0 1.758.45 3.423 1.258 4.899L2.05 22l5.05-1.208C8.52 21.55 10.185 22 12 22c5.523 0 10-4.477 10-10S17.523 2 12 2zm-1.218 13.91c-.244.123-.51.196-.78.196c-.314 0-.616-.09-.884-.265l-2.09-1.385a1.2 1.2 0 0 1-.58-1.008v-3.494a1.2 1.2 0 0 1 .575-1.006l2.09-1.39a1.92 1.92 0 0 1 1.77 0l2.09 1.39a1.2 1.2 0 0 1 .576 1.007v3.493a1.2 1.2 0 0 1-.58 1.008l-2.09 1.385z"
@@ -161,7 +258,8 @@
                 <div class="px-4 sm:px-10 md:px-20 lg:px-28 py-16">
                     <div class="w-full max-w-7xl mx-auto flex flex-col gap-24 md:gap-32">
 
-                        <section class="py-16 bg-background-light dark:bg-background-dark" id="reviews">
+                        <!-- Reviews Section -->
+                        <section class="pt-16 pb-8 bg-background-light dark:bg-background-dark" id="reviews">
                             <div class="text-center mb-12">
                                 <h2 class="font-display text-4xl lg:text-5xl font-bold">Trusted by Thousands of Happy
                                     Guests</h2>
@@ -189,7 +287,7 @@
                             </div>
 
                             <!-- Reviews Carousel -->
-                            <div id="reviews-carousel" class="relative">
+                            <div id="reviews-carousel" class="relative hidden">
                                 <div class="overflow-hidden">
                                     <div id="reviews-track" data-carousel-track
                                         class="flex md:grid md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8">
@@ -283,43 +381,13 @@
                                     </div>
                                 </div>
                             </div>
-                        </section>
-                        <section class="text-center">
-                            <h2 class="font-display text-4xl lg:text-5xl font-bold mb-4">An Unforgettable Experience
-                            </h2>
-                            <p
-                                class="text-subtle-light dark:text-subtle-dark text-lg max-w-3xl mx-auto leading-relaxed">
-                                We offer more than just a stay; we provide an experience that rejuvenates your soul. Our
-                                commitment to excellence is reflected in every detail.</p>
-                            <div class="mt-12 grid grid-cols-1 md:grid-cols-3 gap-8">
-                                <div
-                                    class="flex flex-col items-center gap-4 bg-surface-light dark:bg-surface-dark p-8 rounded-xl shadow-lg">
-                                    <div class="text-primary text-5xl"><span
-                                            class="material-symbols-outlined !text-5xl">landscape</span></div>
-                                    <h3 class="font-display text-2xl font-semibold">Breathtaking Scenery</h3>
-                                    <p class="text-sm text-subtle-light dark:text-subtle-dark text-center">Tucked away
-                                        in a pristine, secluded paradise, offering unparalleled peace and stunning
-                                        natural views.</p>
-                                </div>
-                                <div
-                                    class="flex flex-col items-center gap-4 bg-surface-light dark:bg-surface-dark p-8 rounded-xl shadow-lg">
-                                    <div class="text-primary text-5xl"><span
-                                            class="material-symbols-outlined !text-5xl">concierge</span></div>
-                                    <h3 class="font-display text-2xl font-semibold">Personalized Service</h3>
-                                    <p class="text-sm text-subtle-light dark:text-subtle-dark text-center">Our dedicated
-                                        24/7 concierge team ensures your every need is met, creating a truly bespoke
-                                        stay.</p>
-                                </div>
-                                <div
-                                    class="flex flex-col items-center gap-4 bg-surface-light dark:bg-surface-dark p-8 rounded-xl shadow-lg">
-                                    <div class="text-primary text-5xl"><span
-                                            class="material-symbols-outlined !text-5xl">celebration</span></div>
-                                    <h3 class="font-display text-2xl font-semibold">Exclusive Direct Offers</h3>
-                                    <p class="text-sm text-subtle-light dark:text-subtle-dark text-center">Call us
-                                        directly to access special packages and the best possible rates, guaranteed.</p>
-                                </div>
+                            <div class="mt-6 text-center">
+                                <button id="show-reviews"
+                                    class="text-primary font-semibold underline underline-offset-4 decoration-2 hover:decoration-4 hover:text-primary/90 focus:outline-none focus:ring-2 focus:ring-primary/30 rounded-full px-4 py-2 transition-colors">Show
+                                    Reviews</button>
                             </div>
                         </section>
+                        <!-- Amenities Section -->
                         <section class="relative py-16" id="amenities">
                             <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-center">
                                 <div class="lg:col-span-5 relative">
@@ -385,50 +453,8 @@
                             </div>
                         </section>
 
-                        <section class="py-16" id="activities">
-                            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
-                                <div class="order-2 lg:order-1">
-                                    <h2 class="font-display text-4xl lg:text-5xl font-bold mb-8">Adventure &amp;
-                                        Serenity</h2>
-                                    <p
-                                        class="text-subtle-light dark:text-subtle-dark text-lg mb-8 max-w-lg leading-relaxed">
-                                        Whether you seek thrilling adventures or peaceful moments, we have something for
-                                        everyone.</p>
-                                    <div class="space-y-6">
-                                        <div class="relative rounded-xl overflow-hidden group">
-                                            <img alt="Nature Trails"
-                                                class="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-110"
-                                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBVS_s8mzqWI4AQJWKOx0YTPzjPu8VKHDs4kzTit218q0WFWuns5fZgixuBO7HZKGs-2wH-ZA6tR6FLXqQ0Irh5Mue6JGFHJaxHYN9Pd3vpuT2AEMnV8Iy5vXLnrlmLwgEiMnb-xVJ594kx0_njaBjxUScZFkIHZWvFnLyoZRQkmDNRb6iKOJiENHYeiJSXOij9dOmklAiFKkKVCtAPOAAnJs4pBbHLARnqMErVh_g4A7JdiieKaL1rpxCEa6quMJb-dsFH_II6N9k" />
-                                            <div
-                                                class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end p-6">
-                                                <h3 class="text-white text-2xl font-display font-bold">Nature Trails
-                                                    &amp; Hiking</h3>
-                                            </div>
-                                        </div>
-                                        <div class="relative rounded-xl overflow-hidden group">
-                                            <img alt="Yoga Sessions"
-                                                class="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-110"
-                                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuDyKKsmmbEmEEhKKlCQthqzZ2SRiKqamgvywOnQFCILiUCFUXwIFZr0fnCWhdexUilVCyYayPMse3PDbmmR3ZNGUdvUHWIP2RG_PkYq48W-RDlQjrj2XZksoQlY35S5c24S2vS175L1gEiVchCgudBNVqyiq4XnWONodd1vSQQyVqw3clApX51AFaAxSEdyzvNC1IjgWEWm2iTapGvsxFcYED8i3KrDdkxg20exRT6pr5lg-IJJFq4q9_mQdO2TKPajHJgZFPJJyPA" />
-                                            <div
-                                                class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end p-6">
-                                                <h3 class="text-white text-2xl font-display font-bold">Yoga &amp;
-                                                    Meditation</h3>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div
-                                    class="relative order-1 lg:order-2 h-[450px] sm:h-[550px] lg:h-[600px] w-full lg:w-auto">
-                                    <img alt="Activity collage"
-                                        class="absolute top-0 right-0 w-3/4 h-3/5 object-cover rounded-xl shadow-2xl"
-                                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuAMGSlkwTJ1hlpf2ffjS9xC8dL7PE988Hkx_83wNuZ_4Yic1hVWSuaApR6_L1RVQprAhcx1v5jo4sq4H2hrEiIJEQvyC64auNM-ILY0M4LZTr6s3uCI5uU43XoWpQShazz3v6-VXmwNG44vsS5gli4IhBa-f16wnvLkVP0Eds6KRDiLUuE9tXSd8_IZIjbRqypNrkNl7dn_AmXVTWGAiMhCJyTk1jioYq3z6Z9AbjpMKRkd_S0Tze7YJf62xBL6YZJWRb-xN-jPTUU" />
-                                    <img alt="Activity collage 2"
-                                        class="absolute bottom-0 left-0 w-2/3 h-1/2 object-cover rounded-xl shadow-2xl border-8 border-background-light dark:border-background-dark"
-                                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuAkr1avzohLLc0YFCRM0iQvMyOkMdkv95O0dKvnkXt1WBkrG61J2flYbh6hhqcBAmtrH-EMXKW09rZbmnmxfZH2LjXYTCMXorrRMqBjc33eRNsKTBKzZvSXcqNOYwSB8jb4N-3eX3HWeFaM8d1bajv1JuCYS_X2ThvSWtlQyfUEX32bome9gnTO0g6iuDMKyrVi5XfRwSfjO_6Hlw_7BWosSIyG134H9120fRP-iHP-crHNSlQQd5fn51UYxGyeIHoDmCcTHMJL32Y" />
-                                </div>
-                            </div>
-                        </section>
 
+                        <!-- Rooms Section -->
                         <section class="py-16" id="rooms">
                             <div class="text-center mb-12">
                                 <h2 class="font-display text-4xl lg:text-5xl font-bold">Your Private Sanctuary</h2>
@@ -496,6 +522,53 @@
                             </div>
                         </section>
 
+                        <!-- Activities Section -->
+                        <section class="py-16" id="activities">
+                            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+                                <div class="order-2 lg:order-1">
+                                    <h2 class="font-display text-4xl lg:text-5xl font-bold mb-8">Adventure &amp;
+                                        Serenity</h2>
+                                    <p
+                                        class="text-subtle-light dark:text-subtle-dark text-lg mb-8 max-w-lg leading-relaxed">
+                                        Whether you seek thrilling adventures or peaceful moments, we have something for
+                                        everyone.</p>
+                                    <div class="space-y-6">
+                                        <div class="relative rounded-xl overflow-hidden group">
+                                            <img alt="Nature Trails"
+                                                class="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-110"
+                                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBVS_s8mzqWI4AQJWKOx0YTPzjPu8VKHDs4kzTit218q0WFWuns5fZgixuBO7HZKGs-2wH-ZA6tR6FLXqQ0Irh5Mue6JGFHJaxHYN9Pd3vpuT2AEMnV8Iy5vXLnrlmLwgEiMnb-xVJ594kx0_njaBjxUScZFkIHZWvFnLyoZRQkmDNRb6iKOJiENHYeiJSXOij9dOmklAiFKkKVCtAPOAAnJs4pBbHLARnqMErVh_g4A7JdiieKaL1rpxCEa6quMJb-dsFH_II6N9k" />
+                                            <div
+                                                class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end p-6">
+                                                <h3 class="text-white text-2xl font-display font-bold">Nature Trails
+                                                    &amp; Hiking</h3>
+                                            </div>
+                                        </div>
+                                        <div class="relative rounded-xl overflow-hidden group">
+                                            <img alt="Yoga Sessions"
+                                                class="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-110"
+                                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuDyKKsmmbEmEEhKKlCQthqzZ2SRiKqamgvywOnQFCILiUCFUXwIFZr0fnCWhdexUilVCyYayPMse3PDbmmR3ZNGUdvUHWIP2RG_PkYq48W-RDlQjrj2XZksoQlY35S5c24S2vS175L1gEiVchCgudBNVqyiq4XnWONodd1vSQQyVqw3clApX51AFaAxSEdyzvNC1IjgWEWm2iTapGvsxFcYED8i3KrDdkxg20exRT6pr5lg-IJJFq4q9_mQdO2TKPajHJgZFPJJyPA" />
+                                            <div
+                                                class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end p-6">
+                                                <h3 class="text-white text-2xl font-display font-bold">Yoga &amp;
+                                                    Meditation</h3>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div
+                                    class="relative order-1 lg:order-2 h-[450px] sm:h-[550px] lg:h-[600px] w-full lg:w-auto">
+                                    <img alt="Activity collage"
+                                        class="absolute top-0 right-0 w-3/4 h-3/5 object-cover rounded-xl shadow-2xl"
+                                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuAMGSlkwTJ1hlpf2ffjS9xC8dL7PE988Hkx_83wNuZ_4Yic1hVWSuaApR6_L1RVQprAhcx1v5jo4sq4H2hrEiIJEQvyC64auNM-ILY0M4LZTr6s3uCI5uU43XoWpQShazz3v6-VXmwNG44vsS5gli4IhBa-f16wnvLkVP0Eds6KRDiLUuE9tXSd8_IZIjbRqypNrkNl7dn_AmXVTWGAiMhCJyTk1jioYq3z6Z9AbjpMKRkd_S0Tze7YJf62xBL6YZJWRb-xN-jPTUU" />
+                                    <img alt="Activity collage 2"
+                                        class="absolute bottom-0 left-0 w-2/3 h-1/2 object-cover rounded-xl shadow-2xl border-8 border-background-light dark:border-background-dark"
+                                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuAkr1avzohLLc0YFCRM0iQvMyOkMdkv95O0dKvnkXt1WBkrG61J2flYbh6hhqcBAmtrH-EMXKW09rZbmnmxfZH2LjXYTCMXorrRMqBjc33eRNsKTBKzZvSXcqNOYwSB8jb4N-3eX3HWeFaM8d1bajv1JuCYS_X2ThvSWtlQyfUEX32bome9gnTO0g6iuDMKyrVi5XfRwSfjO_6Hlw_7BWosSIyG134H9120fRP-iHP-crHNSlQQd5fn51UYxGyeIHoDmCcTHMJL32Y" />
+                                </div>
+                            </div>
+                        </section>
+
+
+                        <!-- Dining / Food Section -->
                         <section class="py-16" id="food">
                             <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
                                 <div class="relative h-[450px] lg:h-[650px] w-full">
@@ -537,6 +610,7 @@
                                 </div>
                             </div>
                         </section>
+                        <!-- Contact Section -->
                         <section class="py-16 text-center bg-primary/10 dark:bg-primary/20 p-8 md:p-16 rounded-xl"
                             id="contact">
                             <h2 class="font-display text-4xl font-bold">Ready for Your Escape?</h2>
@@ -544,15 +618,15 @@
                                 class="mt-4 text-subtle-light dark:text-subtle-dark text-lg max-w-2xl mx-auto leading-relaxed">
                                 Contact us directly to get the best rates and personalized service for your dream
                                 vacation.</p>
-                            <div class="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
+                            <div class="mt-8 flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
                                 <button
-                                    class="flex items-center justify-center rounded-full h-14 px-8 text-base font-semibold bg-primary text-white hover:bg-opacity-90 transition-all duration-300 transform hover:scale-105 shadow-lg">
+                                    class="btn-ghost-dark inline-flex items-center justify-center text-sm md:text-base">
                                     <span class="material-symbols-outlined mr-2">call</span>
                                     <span>Call Now &amp; Book Your Stay</span>
                                 </button>
                                 <button
-                                    class="flex items-center justify-center rounded-full h-14 px-8 text-base font-semibold bg-green-600 text-white hover:bg-green-700 transition-colors duration-300 transform hover:scale-105 shadow-lg">
-                                    <svg class="w-6 h-6 mr-3" fill="currentColor" viewBox="0 0 24 24"
+                                    class="btn-ghost-dark inline-flex items-center justify-center text-sm md:text-base">
+                                    <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24"
                                         xmlns="http://www.w3.org/2000/svg">
                                         <path fill-rule="evenodd"
                                             d="M18.425 5.575a1.002 1.002 0 0 1 1.414 0l.002.002a1 1 0 0 1 0 1.414l-1.06 1.06a.5.5 0 0 0 0 .707l1.06 1.06a1 1 0 0 1 0 1.414l-.002.002a1 1 0 0 1-1.414 0l-1.06-1.06a.5.5 0 0 0-.707 0l-1.06 1.06a1 1 0 0 1-1.414 0l-.002-.002a1 1 0 0 1 0-1.414l1.06-1.06a.5.5 0 0 0 0-.707l-1.06-1.06a1 1 0 0 1 0-1.414l.002-.002a1 1 0 0 1 1.414 0l1.06 1.06a.5.5 0 0 0 .707 0l1.06-1.06zM12 2C6.477 2 2 6.477 2 12c0 1.758.45 3.423 1.258 4.899L2.05 22l5.05-1.208C8.52 21.55 10.185 22 12 22c5.523 0 10-4.477 10-10S17.523 2 12 2zm-1.218 13.91c-.244.123-.51.196-.78.196c-.314 0-.616-.09-.884-.265l-2.09-1.385a1.2 1.2 0 0 1-.58-1.008v-3.494a1.2 1.2 0 0 1 .575-1.006l2.09-1.39a1.92 1.92 0 0 1 1.77 0l2.09 1.39a1.2 1.2 0 0 1 .576 1.007v3.493a1.2 1.2 0 0 1-.58 1.008l-2.09 1.385z"
@@ -565,6 +639,7 @@
                     </div>
                 </div>
             </main>
+            <!-- Footer -->
             <footer class="bg-surface-light dark:bg-surface-dark border-t border-border-light dark:border-border-dark">
                 <div class="max-w-7xl mx-auto px-4 sm:px-10 py-12">
                     <div class="flex flex-col md:flex-row justify-between items-center gap-8 text-center md:text-left">
@@ -608,13 +683,12 @@
         <!-- Sticky Bottom Bar for Mobile -->
         <div
             class="fixed bottom-0 left-0 right-0 z-50 bg-surface-light/80 dark:bg-surface-dark/80 backdrop-blur-md shadow-[0_-2px_10px_rgba(0,0,0,0.1)] p-3 flex sm:hidden gap-3">
-            <a href="tel:+1234567890"
-                class="flex-1 flex items-center justify-center rounded-full h-12 px-4 text-sm font-semibold bg-primary text-white hover:bg-opacity-90 transition-all duration-300 transform hover:scale-105">
+            <a href="tel:+1234567890" class="flex-1 btn-ghost-dark inline-flex items-center justify-center text-sm">
                 <span class="material-symbols-outlined mr-2">call</span>
                 <span>Call Now</span>
             </a>
             <a href="https://wa.me/1234567890" target="_blank"
-                class="flex-1 flex items-center justify-center rounded-full h-12 px-4 text-sm font-semibold bg-green-600 text-white hover:bg-green-700 transition-colors duration-300 transform hover:scale-105">
+                class="flex-1 btn-ghost-dark inline-flex items-center justify-center text-sm">
                 <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                     <path fill-rule="evenodd"
                         d="M18.425 5.575a1.002 1.002 0 0 1 1.414 0l.002.002a1 1 0 0 1 0 1.414l-1.06 1.06a.5.5 0 0 0 0 .707l1.06 1.06a1 1 0 0 1 0 1.414l-.002.002a1 1 0 0 1-1.414 0l-1.06-1.06a.5.5 0 0 0-.707 0l-1.06 1.06a1 1 0 0 1-1.414 0l-.002-.002a1 1 0 0 1 0-1.414l1.06-1.06a.5.5 0 0 0 0-.707l-1.06-1.06a1 1 0 0 1 0-1.414l.002-.002a1 1 0 0 1 1.414 0l1.06 1.06a.5.5 0 0 0 .707 0l1.06-1.06zM12 2C6.477 2 2 6.477 2 12c0 1.758.45 3.423 1.258 4.899L2.05 22l5.05-1.208C8.52 21.55 10.185 22 12 22c5.523 0 10-4.477 10-10S17.523 2 12 2zm-1.218 13.91c-.244.123-.51.196-.78.196c-.314 0-.616-.09-.884-.265l-2.09-1.385a1.2 1.2 0 0 1-.58-1.008v-3.494a1.2 1.2 0 0 1 .575-1.006l2.09-1.39a1.92 1.92 0 0 1 1.77 0l2.09 1.39a1.2 1.2 0 0 1 .576 1.007v3.493a1.2 1.2 0 0 1-.58 1.008l-2.09 1.385z"
@@ -755,8 +829,26 @@
                 }).observe(document.body);
             }
 
-            setupCarousel('reviews-carousel');
+            // Initialize rooms carousel on load
             setupCarousel('rooms-carousel');
+
+            // Lazy-init reviews carousel on first click
+            let reviewsInited = false;
+            const showReviewsButton = document.getElementById('show-reviews');
+            if (showReviewsButton) {
+                showReviewsButton.addEventListener('click', () => {
+                    const reviewsCarousel = document.getElementById('reviews-carousel');
+                    if (reviewsCarousel) {
+                        reviewsCarousel.classList.remove('hidden');
+                        if (!reviewsInited) {
+                            setupCarousel('reviews-carousel');
+                            reviewsInited = true;
+                        }
+                        // Optionally hide the button after showing
+                        showReviewsButton.classList.add('hidden');
+                    }
+                });
+            }
         });
     </script>
 </body>
